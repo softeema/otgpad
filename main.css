@@ -1,0 +1,20 @@
+.header {
+font-size: 18px;
+font-style: italic;
+}
+#input {
+font-size: 16px;
+width: 80%;
+height: 500px;
+resize: none;
+}
+#copyBtn, #clearBtn {
+font-size: 16px;
+}
+.footer {
+font-size: 18px;
+left: 0;
+bottom: 0;
+position: fixed;
+width: 100%;
+}
