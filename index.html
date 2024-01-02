@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New</title>
+<style>
+#input {
+font-size: 16px;
+width: 80%;
+height: 500px;
+}
+#copyBtn, #clearBtn {
+font-size: 16px;
+}
+.footer {
+font-size: 16px;
+left: 0;
+bottom: 0;
+position: fixed;
+width: 100%;
+}
+</style>
+</head>
+<body>
+<div align="center">
+<textarea id="input" placeholder="Type or paste (ctrl + v) your text here..."></textarea><br><br>
+<button id="copyBtn">Copy</button>&nbsp;&nbsp;&nbsp;
+<button id="clearBtn">Clear</button>
+<div class="footer">Made by <a href="">M SALMAN CHEEMA</a></div>
+</div>
+</body>
+<script>
+var input = document.getElementById("input");
+var copyBtn = document.getElementById("copyBtn");
+var clearBtn = document.getElementById("clearBtn");
+window.addEventListener("load", function() {
+input.value = localStorage.getItem("inputVal");
+})
+input.addEventListener("input", function() {
+localStorage.setItem("inputVal", input.value);
+})
+copyBtn.addEventListener("click", function() {
+input.select();
+document.execCommand("copy");
+})
+clearBtn.addEventListener("click", function() {
+input.value = "";
+localStorage.clear();
+})
+</script>
+</html>
